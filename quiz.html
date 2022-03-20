@@ -1,0 +1,127 @@
+<div class="content" ng-controller="quizctrl"> 
+    <div class="row pb-5">
+        <article class="col-md-7 offset-md-1 col-12 card-q">
+            <div class="row function-name mt-2">
+                <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3" style="color:black">
+                    <p class="function-menu">Trang chủ / Môn học</p>
+                    <p class="function-text">LÀM BÀI TRẮC NGHIỆM</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="padding: 0px;">
+                <div >
+                    <div class="row" ng-show="!inProgess">
+                        <div class="col-12 mt-2 text-center">
+                            <button class="btn btn-primary text-center" ng-click="start();">Làm bài</button>    
+                        </div>
+                    </div>
+                <div class="card mt-2" ng-show="inProgess">
+                    <div class="card-header card-course">
+                        <div class="row">
+                            <div class="col-10">
+                                <p  class="course-name">{{courseName}}</p>
+                            </div>
+                        <div class="col-2">
+                            <span class="badge bg-info text-dark card-summary float-right" style="margin-right: 15px; margin-top: 5px;">{{count}}/10</span> 
+                          </div>
+                      </div>
+                </div>
+                
+                <div class="card-body">
+                        <h6 class="card-title">
+                            {{question}}
+                              <hr>
+                             </h6>
+                  <div class="form-check" ng-repeat="o in options">
+                    <input class="form-check-input" type="radio" value="{{o.Id}}" name="answer">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      {{o.Text}}
+                    </label>
+                  </div>
+                  <div class="row mt-4">
+                      <div class="col-5">
+                        <a href="#" class="btn btn-primary">Back</a>
+                        <a href="#" class="btn btn-primary" ng-click="check()">Next</a>
+                       
+                      </div>
+                      <div class="col-3 col-md-2 text-center pt-1" style="background-color: rgb(192, 184, 184); font-size: large;">
+                     {{ clock | date:'mm:ss'}}
+                    </div>
+                    <div class="col-md-5 col-4">
+                        <a href="#" class="btn btn-primary float-right" ng-click="finish()">Finish</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" ng-show="isEnd">
+                <p style="color: black;">Điểm của bạn là {{mark}}</p>
+                <button class="btn btn-primary" ng-click="save()">Lưu kết quả</button>
+            </div>
+        </div>
+        </article>
+        <aside class="col-md-3 col-12 mt-2 card-q">
+            <div class="card">
+                <div class="card-header" role="tab" class="section3HeaderId">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordianId" href=".section3ContentId" aria-expanded="true" aria-controls="section3ContentId">
+                            <i class="fas fa-list"> </i>
+                            Các môn học khác
+                </a>
+                    </h5>
+                </div>
+                <div class="section3ContentId" class="collapse in" role="tabpanel" aria-labelledby="section3HeaderId">
+                        <ul class="list-group" ng-repeat="s in courses">
+                            <li class="list-group-item course" ng-click="exam(s.Id)">{{s.Name}}</li> 
+                        </ul>
+                </div>
+            </div>
+            <!-- <div id="accordianId" role="tablist" aria-multiselectable="true"> -->
+                <div class="card">
+                    <div class="card-header" role="tab" id="section1HeaderId">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" data-parent="#accordianId" href=".section1ContentId" aria-expanded="true" aria-controls="section1ContentId">
+                                <i class="fas fa-list"> </i>
+                                Top điểm cao
+                    </a>
+                        </h5>
+                    </div>
+                    <div class="section1ContentId" class="collapse in show" role="tabpanel" aria-labelledby="section1HeaderId">
+                            <ul class="list-group">
+                                <li class="list-group-item course">Phác Thái Anh</li>
+                                <li class="list-group-item course">Quyền Chí Long</li>
+                                <li class="list-group-item course">Hồ Thị Yến Linh</li>
+                                <li class="list-group-item course">Nguyễn Kiều Khanh</li>  
+                                <li class="list-group-item course">for</li>  
+                                <li class="list-group-item course">bar</li>  
+                            </ul>
+                    </div>
+                </div>
+                <div id="accordianId" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" class="section2HeaderId">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" data-parent="#accordianId" href=".section2ContentId" aria-expanded="true" aria-controls="section3ContentId">
+                                    <i class="fas fa-list"> </i>
+                                    Kết quả làm bài của bạn
+                        </a>
+                            </h5>
+                        </div>
+                        <div class="section2ContentId" class="collapse in show" role="tabpanel" aria-labelledby="section2HeaderId">
+                                <ul class="list-group">
+                                    <li class="list-group-item course">Kiểm thử cơ bản 10</li>
+                                    <li class="list-group-item course">Lập trình PHP 10</li> 
+                                </ul>
+                        </div>
+                    </div>  
+                    </div>
+                    <div id="accordianId" role="tablist" aria-multiselectable="true">
+
+                        </div>
+        </aside>
+       
+    </div>
+</div>

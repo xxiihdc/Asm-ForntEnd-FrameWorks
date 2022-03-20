@@ -1,0 +1,119 @@
+<style>
+    input.ng-invalid{
+            background-image: url("img/deny.png");
+         background-position: center right 5px ;
+          background-repeat: no-repeat;
+            background-size: 20px 20px;
+    
+    }
+    input.ng-valid{
+    background-image: url("img/check.png");
+          background-position:center right 5px;
+          background-repeat: no-repeat;
+            background-size: 20px 20px;
+    }
+    </style>
+    
+    <div class="content">
+                <div class="row function-name">
+                    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+                        <p class="function-menu">Trang chủ / Tài khoản</p>
+                        <p class="function-text">THÔNG TIN CÁ NHÂN</p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-10 offset-md-1 col-12 border">
+                        <form name="registerform">
+                            <div class="row mt-2">
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" ng-model="acc.username" readonly>
+                                </div>
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Họ và tên</label>
+                                    <input type="text" class="form-control" ng-model="acc.fullname" required minlength="3"  placeholder="eg: Phác Thái Anh">
+                                    <small class="form-text text-muted" ng-show="registerform.fullname.$invalid">
+                                        Họ và tên không được để trống
+                                    </small>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-2">
+                                <div class=" col-12 form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" class="form-control" name="mail" ng-model="acc.email" required placeholder="eg:example@example.example">
+                                    <small class="form-text text-muted" ng-show="registerform.mail.$invalid">
+                                        Email không được để trống
+                                    </small>
+                                </div>
+                            </div>
+                            <!-- <div class="row mt-2">
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Mật khẩu</label>
+                                    <input type="password" class="form-control" ng-model="acc.password" name="password" required  ng-change="check()" minlength="6" maxlength="30">
+                                    <small class="form-text text-muted" ng-show="registerform.password.$invalid">
+                                        Mật khẩu có tối thiểu 6 ký tự
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Nhập lại mật khẩu</label>
+                                    <input type="password" ng-model="acc.repass" name="repass" ng-change="checkpass()" required  minlength="6" class="form-control">
+                                    <small class="form-text text-muted" ng-show="registerform.repass.$invalid">
+                                        Mật khẩu không khớp
+                                    </small>
+                                </div>
+                            </div> -->
+    
+                            <div class="row mt-2">
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Ngày sinh</label>
+                                    <input type="date" ng-model="acc.birthday" name="birthday" class="form-control" timezone="yyyy/MM/dd">
+                                    <small class="form-text text-muted">
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Giới tính</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" ng-model="acc.gender" id="inlineRadio1" value="1">
+                                        <label class="form-check-label"  >Nam</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" ng-model="acc.gender" id="inlineRadio2"  value="0">
+                                        <label class="form-check-label" >Nữ</label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col text-center">
+                                    <button class="btn btn-primary mb-2"  ng-click="register()">Cập nhật thông tin</button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-10 offset-md-1">
+                        <p class="function-text text-center">LỊCH SỬ LÀM BÀI</p>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                              <tr class="table-warning">
+                                <th scope="col">#</th>
+                                <th scope="col">Mã môn</th>
+                                <th scope="col">Tên môn học</th>
+                                <th scope="col">Điểm</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="k in ketqua">
+                                <th scope="row">{{$index+1}}</th>
+                                <td>{{k.maMon}}</td>
+                                <td>{{k.tenMon}}</td>
+                                <td>{{k.diem}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <p ng-show="len">Không có thông tin nào được tìm thấy</p>
+                    </div>
+                </div>
+            </div>

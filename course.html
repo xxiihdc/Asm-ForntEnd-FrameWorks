@@ -1,0 +1,36 @@
+
+	<div class="row function-name">
+		<div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+			<p class="function-menu">Trang chủ / Môn học</p>
+			<p class="function-text">DANH SÁCH MÔN HỌC</p>
+		</div>
+	</div>
+	<div class="row mt-5 mb-5">
+		<div class="col-md-10 offset-md-1 col-12">
+			<div class="row" >
+				<div class="col-md-3 col-12" ng-repeat="c in course |limitTo:4:begin">
+					<div class="card" ng-click="exam(c.Id)">
+						<img src="img/{{c.Logo}}" alt="">
+						<div class="cover">
+							<h3 class="name">{{c.Name}}</h3>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="row mt-2">
+		<div class="col-12">
+			<nav aria-label="Page navigation example ">
+				<ul class="pagination justify-content-center">
+					<li class="page-item"><a class="page-link" ng-click=coursepage(1)>First</a></li>
+					<div ng-repeat="n in pages">
+						<li class="page-item"><a class="page-link"
+							ng-click="coursepage(n)">{{n}}</a></li>
+					</div>
+					<li class="page-item"><a class="page-link" ng-click=coursepage(page)>Last</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>

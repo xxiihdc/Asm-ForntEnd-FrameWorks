@@ -1,0 +1,192 @@
+<style>
+    input.ng-invalid{
+            background-image: url("img/deny.png");
+         background-position: center right 5px ;
+          background-repeat: no-repeat;
+            background-size: 20px 20px;
+    
+    }
+    input.ng-valid{
+    background-image: url("img/check.png");
+          background-position:center right 5px;
+          background-repeat: no-repeat;
+            background-size: 20px 20px;
+    }
+    </style>
+    
+    <div class="content">
+                <div class="row function-name">
+                    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+                        <p class="function-menu">Trang chủ / Đăng ký</p>
+                        <p class="function-text">ĐĂNG KÝ TÀI KHOẢN</p>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-10 offset-md-1 col-12 border">
+                        <form name="registerform">
+                            <div class="row mt-2">
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" ng-model="username" name="username" placeholder="eg:rosepark" ng-change="blur()" required pattern="^[A-Za-z][A-Za-z0-9_]{4,29}$">
+                                    <small class="form-text text-muted" ng-model="usersmall" ng-show="registerform.username.$invalid">
+                                        {{usersmall}}
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Họ và tên</label>
+                                    <input type="text" class="form-control" ng-model="fullname" required minlength="3"  placeholder="eg: Phác Thái Anh">
+                                    <small class="form-text text-muted" ng-show="registerform.fullname.$invalid">
+                                        Họ và tên không được để trống
+                                    </small>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-2">
+                                <div class=" col-12 form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" class="form-control" name="mail" ng-model="mail" required placeholder="eg:example@example.example">
+                                    <small class="form-text text-muted" ng-show="registerform.mail.$invalid">
+                                        Email không được để trống
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Mật khẩu</label>
+                                    <input type="password" class="form-control" ng-model="password" name="password" required  ng-change="check()" minlength="6" maxlength="30">
+                                    <small class="form-text text-muted" ng-show="registerform.password.$invalid">
+                                        Mật khẩu có tối thiểu 6 ký tự
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Nhập lại mật khẩu</label>
+                                    <input type="password" ng-model="repass" name="repass" ng-change="checkpass()" required  minlength="6" class="form-control">
+                                    <small class="form-text text-muted" ng-show="registerform.repass.$invalid">
+                                        Mật khẩu không khớp
+                                    </small>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-2">
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Ngày sinh</label>
+                                    <input type="date" ng-model="birthday" name="birthday" class="form-control" timezone="yyyy/MM/dd">
+                                    <small class="form-text text-muted">
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-12 form-group">
+                                    <label for="">Giới tính</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" ng-model="gender" id="inlineRadio1" value="male">
+                                        <label class="form-check-label" for="inlineRadio1" >Nam</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" ng-model="gender" id="inlineRadio2"  value="female">
+                                        <label class="form-check-label" for="inlineRadio2" >Nữ</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" ng-model="gender" id="inlineRadio3" value="other">
+                                        <label class="form-check-label" for="inlineRadio3" >Khác</label>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col text-center">
+                                    <button class="btn btn-primary mb-2"  ng-click="register()">Đăng ký</button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+<!-- 
+        <div class="content">
+            <div class="row function-name">
+                <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+                    <p class="function-menu">Trang chủ / Đăng ký</p>
+                    <p class="function-text">ĐĂNG KÝ TÀI KHOẢN</p>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-10 offset-md-1 col-12 border">
+                    <form>
+                        <div class="row mt-2">
+                            <div class="col-md-6 col-12 form-group">
+                                <label for="">Tên đăng nhập</label>
+                                <input type="text" class="form-control" placeholder="eg:rosepark">
+                                <small class="form-text text-muted">
+                                    Tên đăng nhập không được để trống
+                                </small>
+                            </div>
+                            <div class="col-md-6 col-12 form-group">
+                                <label for="">Họ và tên</label>
+                                <input type="text" class="form-control" placeholder="eg: Phác Thái Anh">
+                                <small class="form-text text-muted">
+                                    Họ và tên không được để trống
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class=" col-12 form-group">
+                                <label for="">Email</label>
+                                <input type="email" class="form-control" placeholder="eg:example@example.example">
+                                <small class="form-text text-muted">
+                                    Email không được để trống
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6 col-12 form-group">
+                                <label for="">Mật khẩu</label>
+                                <input type="password" class="form-control">
+                                <small class="form-text text-muted">
+
+                                </small>
+                            </div>
+                            <div class="col-md-6 col-12 form-group">
+                                <label for="">Nhập lại mật khẩu</label>
+                                <input type="password" class="form-control">
+                                <small class="form-text text-muted">
+
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-md-6 col-12 form-group">
+                                <label for="">Ngày sinh</label>
+                                <input type="date" class="form-control">
+                                <small class="form-text text-muted">
+                                </small>
+                            </div>
+                            <div class="col-md-6 col-12 form-group">
+                                <label for="">Giới tính</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio3">Khác</label>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col text-center">
+                                <button class="btn btn-primary mb-2">Đăng ký</button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> -->

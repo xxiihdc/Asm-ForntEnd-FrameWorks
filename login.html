@@ -1,0 +1,62 @@
+        <div class="content">
+            <div class="row function-name">
+                <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+                    <p class="function-menu">Trang chủ / Đăng nhập</p>
+                    <p class="function-text">ĐĂNG NHẬP</p>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-10 offset-md-1">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Tên đăng nhập</label>
+                            <input type="text" class="form-control" ng-model="username" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="example@example.example">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" ng-model="pass" id="exampleInputPassword1">
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Ghi nhớ đăng nhập</label>
+                                </div> 
+                            </div>
+                            <div class="col-6" style="text-align: right;">
+                                <div class="mb-3 form-check">
+                                    <a id="forget-pass" ui-sref="forgetpass">Bạn quên mật khẩu ?</a>
+                                </div> 
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-login" ng-click="login()">Đăng nhập</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-10 offset-md-1 col-12">
+                    <h2 class="text-line"><span>hoặc</span></h2>
+                </div>
+            </div>
+            <div class="row mt-4 ml-4 mr-4">
+                <div class="col-md-10 offset-md-1 col-12 border rounded-pill text-center login
+                pt-2 pb-2" style="font-size: 15px;" onclick="loginGG();">
+                    <i class="fab fa-google-plus" style="color: red;"></i>
+                     Đăng nhập với Google
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-10 offset-md-1 col-12 text-center">
+                    Bạn chưa có tài khoản? <a style="color: #e74c3c;"ui-sref="register">Đăng ký ngay</a>
+                </div>
+            </div>
+      
+        </div>

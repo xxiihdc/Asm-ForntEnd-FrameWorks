@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>PD04166</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/form.scss">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js" integrity="sha512-HdDqpFK+5KwK5gZTuViiNt6aw/dBc3d0pUArax73z0fYN8UXiSozGNTo3MFx4pwbBPldf5gaMUq/EqposBQyWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-cookies/1.8.2/angular-cookies.min.js" integrity="sha512-5MlJcQrhy663S1tAEEQGHzoqqdsCIoFYA2ZLajvSeZl4uVxbBvive9hqpiIqHl3CEQfe7WlI/S1lbjsdoEBnRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body onload="setPage();" ng-app="myapp" ng-controller="rootctrl" ng-init="init()">
+    <div class="container-fluid">
+        <div ng-include="'header.html'"></div>
+        <div ng-include="'nav.html'" class="sticky-top"></div>
+ 
+        <div class="content">
+            <div ui-view>
+            </div>
+        </div>
+    
+        <footer>
+            <div class="contact row mt-5 pt-5">
+                <div class="col-md-5 offset-md-1 col-12">
+                    <h3>Liên hệ với chúng tôi</h3>
+                    <p>Nếu bạn muốn cập nhật những thông tin mới nhất về JZTR team.</p>
+                </div>
+                <div class="col-md-5 col-12">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="example@example.example"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Subcribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="info row pt-3">
+                <div class="col-md-3 col-12 offset-md-1">
+                    <p style="font-weight: bold;">Thông tin về JZTR</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        A, perferendis. Inventore accusamus totam quos nam nemo,
+                        possimus beatae quibusdam dicta voluptas,
+                        eligendi fugiat magni id consectetur
+                        unde cumque praesentium vitae.</p>
+                </div>
+                <div class="col-md-2 col-6">
+                    <p style="font-weight: bold;">Menu</p>
+                    <ul>
+                        <li>Trang chủ</li>
+                        <li>Môn học</li>
+                        <li>Giới thiệu</li>
+                        <li>Liên hệ</li>
+                        <li>Góp ý</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6">
+                    <p style="font-weight: bold;">Cộng đồng</p>
+                    <ul>
+                        <li>IT16301</li>
+                        <li>JZTR Team</li>
+                        <li>FPT Polytechnic</li>
+                        <li>Stack Overflow</li>
+                        <li>GeeksforGeeks</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-12">
+                    <p style="font-weight: bold;">Liên hệ</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore beatae illum minima! Temporibus
+                    commodi, harum consectetur provident eos laboriosam. Totam atque aperiam provident obcaecati culpa
+                    praesentium commodi blanditiis sunt laboriosam!
+                    <ul>
+                        <li class="ft-lst"><i class="fab fa-facebook-square fab2"></i></li>
+                        <li class="ft-lst"><i class="fab fa-linkedin fab2"></i></li>
+                        <li class="ft-lst"><i class="fab fa-twitter-square fab2"></i></li>
+                        <li class="ft-lst"><i class="fab fa-instagram-square fab2"></i></li>
+                    </ul>
+                </div>
+            </div>
+        
+        </footer>
+    </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"
+        integrity="sha512-3fMsI1vtU2e/tVxZORSEeuMhXnT9By80xlmXlsOku7hNwZSHJjwcOBpmy+uu+fyWwGCLkMvdVbHkeoXdAzBv+w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

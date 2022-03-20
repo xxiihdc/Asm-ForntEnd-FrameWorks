@@ -1,0 +1,48 @@
+<style>
+    input.ng-invalid{
+            background-image: url("img/deny.png");
+         background-position: center right 5px ;
+          background-repeat: no-repeat;
+            background-size: 20px 20px;
+    
+    }
+    input.ng-valid{
+    background-image: url("img/check.png");
+          background-position:center right 5px;
+          background-repeat: no-repeat;
+            background-size: 20px 20px;
+    }
+    </style>
+<div class="content">
+    <div class="row function-name">
+        <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+            <p class="function-menu">Trang chủ / Đổi mật khẩu</p>
+            <p class="function-text">ĐỔI MẬT KHẨU</p>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-10 offset-md-1">
+            <form name="frmchangepass">
+                <div class="mb-3">
+                    <label class="form-label">Mật khẩu cũ</label>
+                    <input type="password" class="form-control" required ng-model="oldpass" name="oldpass" minlength="6" ng-change="check1()">
+                    <small ng-show="frmchangepass.oldpass.$invalid">Mật khẩu cũ không đúng</small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mật khẩu mới</label>
+                    <input type="password" class="form-control" required ng-model="newpass" minleng="6">
+                </div>
+                <div class="mb-3">
+                    <label= class="form-label">Xác nhân mật khẩu mới</label=>
+                    <input type="password" class="form-control" required name="newpass2" ng-model="newpass2" minleng="6" ng-change="check2()">
+                    <small ng-show="frmchangepass.newpass2.$invalid">Mật khẩu không khớp</small>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-login" ng-click="savepass()">Đổi mật khẩu</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
